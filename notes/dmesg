@@ -1,0 +1,2 @@
+# View kernel(printk) logs with tail
+dmesg -w
