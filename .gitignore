@@ -1,0 +1,26 @@
+# kernel build artifacts
+*.o
+*.ko
+*.mod.*
+*.cmd
+*.symvers
+modules.order
+Module.symvers
+*.d
+
+# generated files
+*.tmp
+*.s
+*.su
+*.gcno
+*.gcda
+*.lcov
+
+# kernel module signing / metadata
+*.order
+*.mod
+
+# IDE / editor
+.vscode/
+.idea/
+*~
