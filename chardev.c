@@ -160,7 +160,31 @@ static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
  */
 static ssize_t device_write(struct file *filp, const char *buff, size_t len,
                             loff_t *off) {
+  if (WARN_ON(!filp)) {
+    return -EINVAL;
+  }
+
+  printk(KERN_INFO "Write called with: { buffer_ptr %p, len: %zu }\n", buff,
+         len);
+  printk(KERN_INFO " * f_flags = %d\n", filp->f_flags);
+
+  char kbuf[128];
+  if (len > (sizeof(kbuf) - 1)) {
+    printk(KERN_INFO "Too big message(%zu)\n", len);
+    return -EINVAL;
+  }
+
+  if (copy_from_user(kbuf, buff, len)) {
+    printk(KERN_INFO "copy_from_user() failed\n");
+    return -EFAULT;
+  }
+
+  kbuf[len] = '\0';
+
+  printk(KERN_INFO "Write message: { \"%s\" }\n", kbuf);
+
   printk(KERN_ALERT "Sorry, this operation isn't supported.\n");
+
   return -EINVAL;
 }
 
