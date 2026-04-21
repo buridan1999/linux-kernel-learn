@@ -191,4 +191,4 @@ static ssize_t device_write(struct file *filp, const char *buff, size_t len,
 module_init(chardev_init);
 module_exit(chardev_cleanup);
 
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("MIT");

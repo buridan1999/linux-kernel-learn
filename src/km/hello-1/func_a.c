@@ -7,4 +7,4 @@ int function_a(void)
     return 8;
 }
 
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("MIT");
