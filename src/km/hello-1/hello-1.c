@@ -30,4 +30,4 @@ static void __exit hello_cleanup(void)
 module_init(hello_init);
 module_exit(hello_cleanup);
 
-MODULE_LICENSE("GPL");
+MODULE_LICENSE("MIT");
