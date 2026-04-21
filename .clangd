@@ -1,0 +1,6 @@
+CompileFlags:
+  Add:
+    - -I/lib/modules/6.19.12-200.fc43.x86_64/build/include
+    - -I/lib/modules/6.19.12-200.fc43.x86_64/build/include/uapi
+    - -I/lib/modules/6.19.12-200.fc43.x86_64/build/arch/x86/include
+    - -I/lib/modules/6.19.12-200.fc43.x86_64/build/arch/x86/include/uapi
